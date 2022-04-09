@@ -1,0 +1,148 @@
+body, p, button {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #EAE8FE;
+}
+
+:root {
+    --purple: #6327fe;
+}
+
+.wrapper {
+    width: 55%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.title {
+    margin: 0 auto 50px auto;
+    width: 386px;
+    height: 150px;
+}
+
+.title img {
+    width: 100%;
+    height: 100%;
+}
+
+.machine-container {
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+}
+
+.machine {
+    background-color: white;
+    padding: 20px 12px;
+}
+
+.machine:last-child {
+    padding: 0 12px;
+    background-color: #EAE8FE;
+}
+
+.lists {
+    display: flex;
+}
+
+.list {
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    margin: 4px;
+}
+
+.list:hover {
+    border-color: var(--purple);
+}
+
+.product-name {
+    font-size: 9px;
+    padding: 6px;
+}
+
+.product-price {
+    width: 72px;
+    font-size: 12px;
+    background-color: var(--purple);
+    color: #ffffff;
+    padding: 4px 0;
+    border-radius: 15px;
+}
+
+.info {
+    display: flex;
+}
+
+.left {
+    width: 200px;
+    margin: 10px 8px 0 4px;
+}
+
+.right {
+    width: 98px;
+    margin: 10px 8px 0 4px;
+}
+
+.balance {
+    background-color: #EAE8FE;
+    font-size: 14px;
+    padding: 7px 0 7px 10px;
+    border-radius: 5px;
+    margin: 6px 0;
+}
+
+.deposit {
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.1);
+    padding: 7px 5px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 184px;
+    margin: 6px 0;
+}
+
+button {
+    width: 98px;
+    font-size: 13px;
+    margin: 6px 0;
+    padding: 5px 0;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.top,
+.bottom {
+    background-color: #ffffff;
+}
+
+.top {
+    padding: 9px 25px;
+    margin-bottom: 12px;
+}
+
+.fund {
+    box-sizing: border-box;
+    background-color: #EAE8FE;
+    font-size: 14px;
+    padding: 7px 10px;
+    border-radius: 5px;
+    width: 306px;
+}
+
+.left-title {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 11px;
+}
+
+.beverage-list {
+    background-color: #EAE8FE;
+    padding: 12px;
+}
