@@ -7,6 +7,11 @@ body {
     background-color: #EAE8FE;
 }
 
+button,
+.list {
+    cursor: pointer;
+}
+
 :root {
     --purple: #6327fe;
 }
@@ -18,9 +23,9 @@ body {
 }
 
 .title {
-    margin: 0 auto 50px auto;
-    width: 386px;
-    height: 150px;
+    margin: 0 auto 20px auto;
+    width: 300px;
+    height: 120px;
 }
 
 .title img {
@@ -106,7 +111,33 @@ body {
     margin: 6px 0;
 }
 
-button {
+.get-list {
+    background-color: #EAE8FE;
+    width: calc(100% - 20px);
+    padding: 10px;
+    height: 100px;
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+
+.detail {
+    background-color: #ffffff;
+    font-size: 9px;
+    display: flex;
+    margin: 6px 0;
+    border-radius: 5px;
+}
+
+.detail img {
+    width: 18px;
+    padding: 6px 10px;
+}
+
+.detail p {
+    line-height: 47px;
+}
+
+.function {
     width: 98px;
     font-size: 13px;
     margin: 6px 0;
@@ -114,6 +145,16 @@ button {
     border: 3px solid rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     background-color: #ffffff;
+}
+
+.get {
+    background-color: var(--purple);
+    width: 100%;
+    font-size: 13px;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 50px 0;
+    border-radius: 5px;
 }
 
 .top,
