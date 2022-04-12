@@ -54,6 +54,9 @@
        <div align="center">
        <img src="images/진행상황/0412.png" width="600">
        </div><br>
+       <div align="center">
+       <img src="images/진행상황/0412(2).png" width="600">
+       </div><br>
     3. 자판기 중앙정렬 해결
        - position: absolute, transform 사용
        ```css
