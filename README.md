@@ -1,5 +1,8 @@
 # 음료 자판기 만들기
 
+- ## 주소
+https://yoojs1205.github.io/vending_machine/
+
 - ## 사용한 기술 스택
 
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/></a>&nbsp;
