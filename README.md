@@ -1,7 +1,8 @@
 # 음료 자판기 만들기
 
 - ## 주소
-https://yoojs1205.github.io/vending_machine/
+
+  https://yoojs1205.github.io/vending_machine/
 
 - ## 사용한 기술 스택
 
@@ -54,7 +55,7 @@ https://yoojs1205.github.io/vending_machine/
        <img src="images/진행상황/0412.png" width="600">
        </div><br>
     3. 자판기 중앙정렬 해결
-       - position, transform 사용
+       - position: absolute, transform 사용
        ```css
        .wrapper {
          position: absolute;
