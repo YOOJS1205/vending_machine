@@ -98,16 +98,18 @@ button,
 .balance {
     background-color: #EAE8FE;
     font-size: 14px;
-    padding: 7px 0 7px 10px;
+    line-height: 20px;
+    padding: 6px 0 7px 10px;
     border-radius: 5px;
     margin: 6px 0;
 }
 
 .deposit {
     font-size: 13px;
+    line-height: 19px;
     color: rgba(0, 0, 0, 0.1);
-    padding: 7px 5px;
-    border: 3px solid rgba(0, 0, 0, 0.1);
+    padding: 6px 6px 8px;
+    border: 1px solid #bdbdbd;
     border-radius: 5px;
     width: 184px;
     margin: 6px 0;
@@ -122,29 +124,63 @@ button,
     overflow-y: scroll;
 }
 
+.get-list::-webkit-scrollbar,
+.beverage-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.get-list::-webkit-scrollbar-thumb,
+.beverage-list::-webkit-scrollbar-thumb {
+    background-clip: padding-box;
+    height: 79px;
+    background-color: #ffffff;
+    border-right: 4px solid transparent;
+}
+
 .detail {
     background-color: #ffffff;
+    overflow: hidden;
     font-size: 9px;
-    display: flex;
     margin: 6px 0;
     border-radius: 5px;
 }
 
-.detail img {
+.beverage-pic {
+    float: left;
     width: 18px;
     padding: 6px 10px;
+    margin-top: 2px;
 }
 
-.detail p {
-    line-height: 47px;
+.beverage-name {
+    line-height: 13px;
+    padding: 18px 0;
+    float: left;
+    font-weight: 500;;
+}
+
+.beverage-num {
+    border: 1px solid #bdbdbd;
+    padding: 4px 11px 6px 11px;
+    margin: 8px 0;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    line-height: 20px;
+    font-weight: 600;
+    float: right;
+    margin-right: 8px;
 }
 
 .function {
     width: 98px;
     font-size: 13px;
+    line-height: 19px;
     margin: 6px 0;
-    padding: 5px 0;
-    border: 3px solid rgba(0, 0, 0, 0.1);
+    padding: 6px 0 7px;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     background-color: #ffffff;
 }
