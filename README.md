@@ -68,3 +68,43 @@
          height: 100%;
        }
        ```
+
+  - 0415 (금)
+
+    1. 스크롤바, 장바구니에 담은 음료수의 갯수 퍼블리싱
+       <div align="center">
+        <img src="images/진행상황/0415.png" width="600">
+       </div><br>
+
+  - 0416 (토)
+    1. 같은 제품을 클릭했을 때 갯수가 늘어나는 기능 구현<br>
+       - 6개 제품이 클릭된 횟수를 저장한 배열을 선언
+       - 제품을 눌렀을 때 생기는 요소에 해당 제품의 이름을 클래스로 부여
+       - 해당 제품이 2번째 클릭됐을 때부터는 새로운 상품으로 뜨지 않고 숫자만 늘어나는 기능을 조건문으로 구현
+       ```javascript
+       // 각각 1~6번 제품이 클릭된 횟수를 0으로 초기화
+       var clickNumArray = [0, 0, 0, 0, 0, 0];
+       // 제품 클릭 이벤트리스너 (이벤트 위임)
+       Machine.addEventListener("click", (e) => {
+         for (let i = 0; i < 6; i++) {
+           // 제품이 클릭되면, 해당 index의 클릭횟수가 1 증가
+           if (e.target == List[i]) {
+             clickNumArray[i]++;
+             // 첫 번째 클릭이면 html 요소 생성, 2번째 부터는 숫자만 증가
+             // 해당 제품 이름의 클래스를 부여
+             if (clickNumArray[i] == 1) {
+               var Detail = `<section class="detail">
+                           <img class="beverage-pic" src="${e.target.childNodes[1].src}" alt="product-info">
+                           <p class="beverage-name">${e.target.childNodes[3].innerHTML}</p>
+                           <p class="beverage-num ${e.target.childNodes[3].innerHTML}">${clickNumArray[i]}</p>
+                       <section>`;
+               GetList.insertAdjacentHTML("beforeend", Detail);
+             } else {
+               document.querySelector(
+                 `.${e.target.childNodes[3].innerHTML}`
+               ).innerHTML = clickNumArray[i];
+             }
+           }
+         }
+       });
+       ```
