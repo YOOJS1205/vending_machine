@@ -28,5 +28,7 @@ Machine.addEventListener('click', (e) => {
 })
 
 Get.addEventListener('click', () => {
-    BeverageList.insertAdjacentHTML('beforeend', GetList.outerHTML);
+    for (let i = 1; i < GetList.childNodes.length; i++) {
+        BeverageList.insertAdjacentHTML('beforeend', GetList.childNodes[i].outerHTML);
+    }
 })
