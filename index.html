@@ -8,63 +8,58 @@
     <title>Vending Machine</title>
 </head>
 <body>
-    <section class="wrapper">
+    <section class="wrapper clear-fix">
         <section class="title">
             <img src="images/Logo.png" alt="logo">
         </section>
         <section class="machine-container">
             <section class="machine">
                 <section class="lists">
-                    <section class="list">
+                    <button class="list">
                         <img src="images/coke.png" alt="product">
                         <p class="product-name">Original_Cola</p>
                         <p class="product-price">1000원</p>
-                    </section>
-                    <section class="list">
+                    </button>
+                    <button class="list">
                         <img src="images/콜라 (4).png" alt="product">
-                        <p class="product-name">Purple_Cola</p>
+                        <p class="product-name">Violet_Cola</p>
                         <p class="product-price">1000원</p>
-                    </section>
-                    <section class="list">
+                    </button>
+                    <button class="list">
                         <img src="images/콜라 (2).png" alt="product">
                         <p class="product-name">Yellow_Cola</p>
                         <p class="product-price">1000원</p>
-                    </section>
-                </section>
-                <section class="lists">
-                    <section class="list">
+                    </button>
+                    <button class="list">
                         <img src="images/콜라 (5).png" alt="product">
                         <p class="product-name">Cool_Cola</p>
                         <p class="product-price">1000원</p>
-                    </section>
-                    <section class="list">
+                    </button>
+                    <button class="list">
                         <img src="images/콜라 (3).png" alt="product">
                         <p class="product-name">Green_Cola</p>
                         <p class="product-price">1000원</p>
-                    </section>
-                    <section class="list">
+                    </button>
+                    <button class="list">
                         <img src="images/콜라 (1).png" alt="product">
                         <p class="product-name">Orange_Cola</p>
                         <p class="product-price">1000원</p>
-                    </section>
+                    </button>
                 </section>
                 <section class="info">
-                    <section class="left">
-                        <section class="balance">잔액: </section>
-                        <input class="deposit" type="text" placeholder="입금액 입력">
-                        <section class="get-list">
-                        </section>
-                    </section>
-                    <section class="right">
-                        <button class="function">거스름돈 반환</button>
-                        <button class="function">입금</button>
-                        <button class="get">획득</button>
-                    </section>
+                    <div class="balance">잔액: </div>
+                    <button class="get-balance">거스름돈 반환</button>
+                    <input class="deposit" type="text" placeholder="입금액 입력">
+                    <button class="get-deposit">입금</button>
+                    <div class="cart-list"></div>
+                    <button class="get-items">획득</button>
                 </section>
             </section>
             <section class="machine">
                 <section class="top">
-                    <section class="fund">소지금: </section>
+                    <section class="fund">소지금: 
+                        <span>25000원</span>
+                    </section>
                 </section>
                 <section class="bottom">
                     <p class="left-title">획득한 음료</p>
