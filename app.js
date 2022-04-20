@@ -17,9 +17,8 @@ const removeAllChild = () => {
 Machine.addEventListener('click', (e) => {
     for (let i = 0; i < 6; i++) {
         if (e.target === List[i]) {
-            console.log(e.currentTarget)
             clickNumArray[i]++;
-            if (clickNumArray[i] == 1) {
+            if (clickNumArray[i] == 1 && e.target === List[i]) {
                 var Detail = `<section class="detail">
                             <img class="beverage-pic" src="${e.target.childNodes[1].src}" alt="product-info">
                             <p class="beverage-name">${e.target.childNodes[3].innerHTML}</p>

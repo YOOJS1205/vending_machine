@@ -22,6 +22,16 @@ button,
 	clear:both;
 }
 
+.ir {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -9999px;
+    line-height: 0;
+    font-size: 1px;
+    color: transparent;
+}
+
 .wrapper {
     position: absolute;
     left: 50%;
@@ -84,12 +94,14 @@ button,
 }
 
 .product-name {
+    display: inline-block;
     padding: 7px 0;
     font-size: 9px;
     width: 73px;
 }
 
 .product-price {
+    display: inline-block;
     font-size: 12px;
     line-height: 100%;
     background-color: var(--purple);
@@ -170,7 +182,7 @@ button,
 }
 
 .bottom {
-    padding: 25px 20px 20px 20px;
+    padding: 25px 20px 10px 20px;
 }
 
 .fund {
@@ -262,4 +274,24 @@ button,
     height: 79px;
     background-color: #ffffff;
     border-right: 4px solid transparent;
+}
+
+@media screen and (max-width: 360px) {
+    body {
+        background-color: #fff;
+    }
+    .title {
+        width: 166px;
+        height: 71px;
+    }
+    .machine-container {
+        display: block;
+    }
+    .machine {
+        margin: 0;
+    }
+
+    .machine:last-child {
+        background-color: #fff;
+    }
 }
