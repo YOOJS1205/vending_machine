@@ -17,6 +17,7 @@ const removeAllChild = () => {
 Machine.addEventListener('click', (e) => {
     for (let i = 0; i < 6; i++) {
         if (e.target === List[i]) {
+            console.log(e.currentTarget)
             clickNumArray[i]++;
             if (clickNumArray[i] == 1) {
                 var Detail = `<section class="detail">
