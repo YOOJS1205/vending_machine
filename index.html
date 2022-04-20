@@ -8,66 +8,69 @@
     <title>Vending Machine</title>
 </head>
 <body>
-    <section class="wrapper clear-fix">
-        <header class="title">
+    <section class="wrapper">
+        <h1 class="title">
             <img src="images/Logo.png" alt="ColaCola">
-        </header>
-        <section class="machine-container">
+        </h1>
+        <article class="machine-container">
             <section class="machine">
+                <h2 class="ir">왼쪽 기계</h2>
                 <section class="lists">
+                    <h2 class="ir">음료 리스트</h2>
                     <button class="list">
                         <img class="product-img" src="images/coke.png" alt="product">
-                        <p class="product-name">Original_Cola</p>
-                        <p class="product-price">1000원</p>
+                        <span class="product-name">Original_Cola</span>
+                        <span class="product-price">1000원</span>
                     </button>
                     <button class="list">
                         <img src="images/콜라(4).png" alt="">
-                        <p class="product-name">Violet_Cola</p>
-                        <p class="product-price">1000원</p>
+                        <span class="product-name">Violet_Cola</span>
+                        <span class="product-price">1000원</span>
                     </button>
                     <button class="list">
                         <img src="images/콜라(2).png" alt="">
-                        <p class="product-name">Yellow_Cola</p>
-                        <p class="product-price">1000원</p>
+                        <span class="product-name">Yellow_Cola</span>
+                        <span class="product-price">1000원</span>
                     </button>
                     <button class="list">
                         <img src="images/콜라(5).png" alt="">
-                        <p class="product-name">Cool_Cola</p>
-                        <p class="product-price">1000원</p>
+                        <span class="product-name">Cool_Cola</span>
+                        <span class="product-price">1000원</span>
                     </button>
                     <button class="list">
                         <img src="images/콜라(3).png" alt="">
-                        <p class="product-name">Green_Cola</p>
-                        <p class="product-price">1000원</p>
+                        <span class="product-name">Green_Cola</span>
+                        <span class="product-price">1000원</span>
                     </button>
                     <button class="list">
                         <img src="images/콜라(1).png" alt="">
-                        <p class="product-name">Orange_Cola</p>
-                        <p class="product-price">1000원</p>
+                        <span class="product-name">Orange_Cola</span>
+                        <span class="product-price">1000원</span>
                     </button>
                 </section>
-                <section class="info">
+                <div class="info">
                     <div class="balance">잔액: </div>
                     <button class="get-balance">거스름돈 반환</button>
                     <input class="deposit" type="text" placeholder="입금액 입력">
                     <button class="get-deposit">입금</button>
                     <div class="cart-list"></div>
                     <button class="get-items">획득</button>
-                </section>
+                </div>
             </section>
             <section class="machine">
-                <section class="top">
-                    <section class="fund">소지금: 
+                <h2 class="ir">오른쪽 기계</h2>
+                <div class="top">
+                    <p class="fund">소지금: 
                         <span>25000원</span>
-                    </section>
-                </section>
-                <section class="bottom">
+                    </p>
+                </div>
+                <div class="bottom">
                     <p class="left-title">획득한 음료</p>
-                    <section class="beverage-list"></section>
+                    <div class="beverage-list"></div>
                     <p class="cost">총금액 : 9000원</p>
-                </section>
+                </div>
             </section>
-        </section>
+        </article>
     </section>
 
     <script src="app.js"></script>

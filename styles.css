@@ -16,12 +16,6 @@ button,
     --purple: #6327fe;
 }
 
-.clear-fix::after {
-    content:'';
-	display:block;
-	clear:both;
-}
-
 .ir {
     display: block;
     overflow: hidden;
@@ -97,6 +91,7 @@ button,
     padding: 7px 0;
     font-size: 9px;
     width: 73px;
+    display: block;
 }
 
 .product-price {
@@ -106,6 +101,7 @@ button,
     color: #ffffff;
     padding: 5px 16px 5px 15px;
     border-radius: 15px;
+    display: block;
 }
 
 .info {
