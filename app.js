@@ -14,7 +14,7 @@ const removeAllChild = () => {
 }
 
 // 상품 담기 => 이벤트 위임 사용
-Machine.addEventListener('click', (e) => {
+Machine.addEventListener('click', e => {
     for (let i = 0; i < 6; i++) {
         if (e.target === List[i]) {
             clickNumArray[i]++;
