@@ -38,51 +38,84 @@
 //         BeverageList.insertAdjacentHTML('beforeend', CartList.childNodes[i].outerHTML);
 //     }
 // })
+
+// 상품 정보 데이터 불러오기
 import beverageList from './beverage.js';
 console.log(beverageList);
 
 const lists = document.querySelector('.lists');
+const cartList = document.querySelector('.cart-list');
+const getButton = document.querySelector('.get-items');
+const getList = document.querySelector('.beverage-list');
 
-                
+// 음료수 별 클릭 횟수 배열로 담기
+const clickNum = Array(beverageList.length).fill(0);
+
+// 상품 갯수만큼 상품 버튼 생성
 beverageList.forEach(item => {
     const button = document.createElement('button');
-    const image = document.createElement('img');
-    const productName = document.createElement('span');
-    const productPrice = document.createElement('span');
     button.className = 'list';
+
+    const image = document.createElement('img');
     image.className = 'product-img';
+    image.src = item.image;
+
+    const productName = document.createElement('span');
     productName.className = 'product-name';
+    productName.innerText = item.name;
+
+    const productPrice = document.createElement('span');
     productPrice.className = 'product-price';
+    productPrice.innerText = item.price;
+
     lists.appendChild(button);
     button.append(image, productName, productPrice);
-    image.src = item.image;
-    productName.innerText = item.name;
-    productPrice.innerText = item.price;
 });
 
 const buttons = [...document.querySelectorAll('.list')];
-const cartList = document.querySelector('.cart-list');
-console.log(buttons);
 
+// 음료 클릭 시 장바구니에 담기는 기능 구현
 lists.addEventListener('click', e => {
-    if (buttons.includes(e.target) || buttons.includes(e.target.parentNode)) {
+    if ((buttons.includes(e.target) || buttons.includes(e.target.parentNode)) &&
+    (clickNum[buttons.indexOf(e.target)] == 0 || clickNum[buttons.indexOf(e.target.parentNode)] == 0)) {
         const cartItem = document.createElement('section');
-        const itemPic = document.createElement('img');
-        const itemName = document.createElement('p');
-        const itemNum = document.createElement('p');
         cartItem.className = 'detail';
+
+        const itemPic = document.createElement('img');
         itemPic.className = 'beverage-pic';
+
+        const itemName = document.createElement('p');
         itemName.className = 'beverage-name';
+
+        const itemNum = document.createElement('p');
         itemNum.className = 'beverage-num';
+
         cartList.appendChild(cartItem);
         cartItem.append(itemPic, itemName, itemNum);
+
         if (buttons.includes(e.target)) {
+            clickNum[buttons.indexOf(e.target)]++;
             itemPic.src = e.target.childNodes[0].src;
             itemName.innerText = e.target.childNodes[1].innerText;
+            itemNum.innerText = clickNum[buttons.indexOf(e.target)];
         } else if (buttons.includes(e.target.parentNode)) {
+            clickNum[buttons.indexOf(e.target.parentNode)]++;
             itemPic.src = e.target.parentNode.childNodes[0].src;
             itemName.innerText = e.target.parentNode.childNodes[1].innerText;
+            itemNum.innerText = clickNum[buttons.indexOf(e.target.parentNode)];
         }
     }
-})
+});
 
+// 획득 버튼 클릭 시 획득한 음료 칸에 담기는 기능 구현
+getButton.addEventListener('click', () => {
+    // forEach 문은 왜 작동하지 않는가..?
+    // cartList.childNodes.forEach(item => {
+    //     getList.appendChild(item);
+    //     console.log(cartList.childNodes);
+    // })
+    while (cartList.childNodes.length !== 0) {
+        console.log(cartList.childNodes);
+        getList.appendChild([...cartList.childNodes].pop());
+    }
+})
