@@ -138,6 +138,11 @@ button,
     padding: 6px 10px 7px;
 }
 
+.balance span {
+    float: right;
+    font-weight: 700;
+}
+
 .deposit {
     font-weight: 500;
     font-size: 13px;
