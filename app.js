@@ -62,10 +62,8 @@ lists.addEventListener('click', e => {
                     item.childNodes[2].innerText = clickNum[buttons.indexOf(e.target.closest('.list'))]
                 }
             })
-            // console.log(e.target.closest('.list').childNodes[1]);
         }
     }
-    console.log(clickNum);
 });
 
 // 획득 버튼
@@ -78,7 +76,7 @@ const cost = document.querySelector('.cost');
 const balance = document.querySelector('.balance-text');
 
 let overall = 0;
-getButton.addEventListener('click', () => {
+getButton.addEventListener('click', e => {
     // 소지금이 있을 때만 작동
     if (ownMoney !== 0) {
         [...cartList.childNodes].forEach(item => {
