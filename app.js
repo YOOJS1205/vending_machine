@@ -56,7 +56,7 @@ lists.addEventListener('click', e => {
             itemName.innerText = e.target.closest('.list').childNodes[1].innerText;
             itemNum.innerText = clickNum[buttons.indexOf(e.target.closest('.list'))];
         } else {
-            const itemDetails = document.querySelectorAll('.detail');
+            const itemDetails = document.querySelectorAll('.cart-list .detail');
             itemDetails.forEach(item => {
                 if(item.childNodes[1].innerText === e.target.closest('.list').childNodes[1].innerText) {
                     item.childNodes[2].innerText = clickNum[buttons.indexOf(e.target.closest('.list'))]
@@ -64,6 +64,7 @@ lists.addEventListener('click', e => {
             })
         }
     }
+    console.log(clickNum);
 });
 
 // 입금 버튼 클릭 시 입금액 만큼 소지금이 증가하는 기능 구현
@@ -78,11 +79,16 @@ let depositMoney = 0;
 myMoney.innerText = `${ownMoney}원`;
 
 depositButton.addEventListener('click', () => {
-    ownMoney -= parseInt(deposit.value);
+    if (ownMoney < parseInt(deposit.value)) {
+        alert('소지금보다 더 많이 넣을 수 없습니다.');
+        deposit.value = '';
+    } else {
+        ownMoney -= parseInt(deposit.value);
     depositMoney += parseInt(deposit.value);
     balance.innerText = `${depositMoney}원`;
     myMoney.innerText = `${ownMoney}원`;
     deposit.value = '';
+    }
 })
 
 // 획득 버튼
@@ -109,7 +115,7 @@ getButton.addEventListener('click', () => {
             return false;
         }
 
-        [...cartList.childNodes].forEach(item => {
+        [...cartList.childNodes].forEach(item => { 
             getList.appendChild(item);
         });
 
