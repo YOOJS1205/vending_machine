@@ -66,6 +66,25 @@ lists.addEventListener('click', e => {
     }
 });
 
+// 입금 버튼 클릭 시 입금액 만큼 소지금이 증가하는 기능 구현
+const deposit = document.querySelector('.deposit');
+const depositButton = document.querySelector('.get-deposit');
+const myMoney = document.querySelector('.my-money');
+const balance = document.querySelector('.balance-text');
+
+// 초기 소지금, 입금 금액
+let ownMoney = 30000;
+let depositMoney = 0;
+myMoney.innerText = `${ownMoney}원`;
+
+depositButton.addEventListener('click', () => {
+    ownMoney -= parseInt(deposit.value);
+    depositMoney += parseInt(deposit.value);
+    balance.innerText = `${depositMoney}원`;
+    myMoney.innerText = `${ownMoney}원`;
+    deposit.value = '';
+})
+
 // 획득 버튼
 // 기능 1. 획득한 음료 칸으로 음료들 이동
 // 기능 2. 음료 클릭된 수 배열 초기화
@@ -73,36 +92,32 @@ lists.addEventListener('click', e => {
 // 기능 4. 음료 담을때마다 잔액 최신화
 
 const cost = document.querySelector('.cost');
-const balance = document.querySelector('.balance-text');
 
+// 장바구니에 담은 제품 수
 let overall = 0;
-getButton.addEventListener('click', e => {
-    // 소지금이 있을 때만 작동
-    if (ownMoney !== 0) {
-        [...cartList.childNodes].forEach(item => {
-            getList.appendChild(item);
-        });
-
+getButton.addEventListener('click', () => {
+    // 잔액이 있을 때만 작동
+    if (depositMoney !== 0) {
         for (let i = 0; i < clickNum.length; i++) {
             overall += clickNum[i];
         }
 
-        balance.innerText = `${ownMoney - overall * 1000}원`
+        // 잔액보다 초과하여 상품 선택해서 구매하면 경고 발생
+        if (depositMoney - overall * 1000 < 0) {
+            alert('한도 초과입니다!');
+            clickNum = Array(beverageList.length).fill(0);
+            return false;
+        }
+
+        [...cartList.childNodes].forEach(item => {
+            getList.appendChild(item);
+        });
+
+        balance.innerText = `${depositMoney - overall * 1000}원`
         cost.innerText = `총금액: ${overall * 1000}원`;
 
         clickNum = Array(beverageList.length).fill(0);
+    } else {
+        alert('돈을 입금하세요.');
     }
-})
-
-// 입금 버튼 클릭 시 입금액 만큼 소지금이 증가하는 기능 구현
-const deposit = document.querySelector('.deposit');
-const depositButton = document.querySelector('.get-deposit');
-const myMoney = document.querySelector('.my-money');
-
-let ownMoney = 0;
-
-depositButton.addEventListener('click', () => {
-    ownMoney += parseInt(deposit.value);
-    myMoney.innerText = `${ownMoney}원`;
-    deposit.value = '';
 })
